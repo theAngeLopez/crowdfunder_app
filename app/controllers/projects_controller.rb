@@ -1,10 +1,12 @@
 class ProjectsController < ApplicationController
+
   def index
     @projects = Project.order(end_date: :desc)
   end
 
   def show
     @project = Project.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -18,7 +20,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
       if @project.save
-        redirect_to products_url, notice: "New Project Created!"
+        redirect_to projects_url, notice: "New Project Created!"
       else
         render "new"
       end
