@@ -1,10 +1,12 @@
 class ProjectsController < ApplicationController
+
   def index
     @projects = Project.order(end_date: :desc)
   end
 
   def show
     @project = Project.find(params[:id])
+    @review = Review.new
   end
 
   def new

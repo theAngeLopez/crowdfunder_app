@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
   root 'pages#homepage'
+  get '/home' => 'pages#homepage'
 
   resources :rewards
-  resources :projects
 
   resources :users, only: [:index, :show, :new, :create, :destroy]
   resources :pledges, only: [:show, :new, :create, :destroy]
 
-  get '/home' => 'pages#homepage'
+  resources :projects do
+    resources :reviews, only: [:show, :create, :destroy]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
