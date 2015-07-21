@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
       if @project.save
-        redirect_to products_url, notice: "New Project Created!"
+        redirect_to projects_path, notice: "New Project Created!"
       else
         render "new"
       end
