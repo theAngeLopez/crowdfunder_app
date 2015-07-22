@@ -3,6 +3,7 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
 
+
 Rails.application.config.sorcery.submodules = [:remember_me, :reset_password]
 
 
@@ -179,21 +180,14 @@ Rails.application.config.sorcery.configure do |config|
     # specify username attributes, for example: [:username, :email].
     # Default: `[:email]`
     #
-<<<<<<< HEAD
     # user.username_attribute_names = [:username, :email]
-=======
     user.username_attribute_names = :email
->>>>>>> 1d2b082963266826926ddedae5ba8fb3fe7a8eab
 
 
     # change *virtual* password attribute, the one which is used until an encrypted one is generated.
     # Default: `:password`
     #
-<<<<<<< HEAD
     # user.password_attribute_name = [:email]
-=======
-    # user.password_attribute_name =
->>>>>>> 1d2b082963266826926ddedae5ba8fb3fe7a8eab
 
 
     # downcase the username before trying to authenticate, default is false
@@ -261,7 +255,7 @@ Rails.application.config.sorcery.configure do |config|
     # How long in seconds the session length will be
     # Default: `604800`
     #
-    # user.remember_me_for =
+    user.remember_me_for =
 
 
     # -- user_activation --
@@ -343,11 +337,8 @@ Rails.application.config.sorcery.configure do |config|
     # mailer class. Needed.
     # Default: `nil`
     #
-<<<<<<< HEAD
     # user.reset_password_mailer =
-=======
-    user.reset_password_mailer = ResetPasswordMailer
->>>>>>> 1d2b082963266826926ddedae5ba8fb3fe7a8eab
+    # user.reset_password_mailer = ResetPasswordMailer
 
 
     # reset password email method on your mailer class.
@@ -469,17 +460,9 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `:uid`
     #
     # user.provider_uid_attribute_name =
-<<<<<<< HEAD
-=======
-
->>>>>>> 1d2b082963266826926ddedae5ba8fb3fe7a8eab
   end
 
   # This line must come after the 'user config' block.
   # Define which model authenticates with sorcery.
   config.user_class = "User"
-<<<<<<< HEAD
-=======
 
->>>>>>> 1d2b082963266826926ddedae5ba8fb3fe7a8eab
-end
