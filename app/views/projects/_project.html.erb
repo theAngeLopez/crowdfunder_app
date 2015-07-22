@@ -1,0 +1,9 @@
+<%= link_to project_path(project.id) do %>
+
+
+  <p><%= project.name %></p>
+  <p><%= project.description %></p>
+  <p><%= project.start_date %> - <%= project.end_date %></p>
+<% end %>
+<!-- keeps the description to 100 characters or less -->
+<p><%= truncate(project.description, length: 100) %></p>

@@ -21,17 +21,20 @@ $(document).on('ready', function() {
     var bottomOfWindow = $window.scrollTop() + $window.height();
     var distanceFromBottom = $(document).height() - bottomOfWindow;
     var proposedNextPageUrl = $('.page > a[rel=next]').attr('href');
+      console.log(proposedNextPageUrl)
 
     // console.log(distanceFromBottom);
 
-    if ( distanceFromBottom <= 100 && (nextPageUrl !== proposedNextPageUrl) ) {
+    if ( distanceFromBottom <= 100 && (nextPageUrl !== proposedNextPageUrl) && (proposedNextPageUrl) ) {
       nextPageUrl = proposedNextPageUrl;
 
+
+
       console.log("near the bottom!");
-w
+
       $.ajax({
         url: nextPageUrl,
-        crossDomain: false
+        crossDomain: false,
         type: 'GET',
         dataType: 'script'
         // success: function(result) {
