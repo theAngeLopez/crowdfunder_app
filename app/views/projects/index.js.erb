@@ -1,0 +1,7 @@
+<% if params[:search] %>
+  $('#projects').html('<%= j(render @projects) %>');
+<% else %>
+  $('#projects').append('<%= j(render @projects %>');
+  $('.page-entries').html('<%= j(page_entries_info @projects) %>');
+  $('.pagination').replaceWith('<%= j(paginate @projects) %>');
+<% end %>
