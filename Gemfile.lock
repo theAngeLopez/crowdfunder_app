@@ -71,12 +71,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.3)
     jwt (1.5.1)
-<<<<<<< HEAD
-=======
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
->>>>>>> 1d2b082963266826926ddedae5ba8fb3fe7a8eab
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
