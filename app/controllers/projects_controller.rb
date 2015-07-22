@@ -1,7 +1,23 @@
 class ProjectsController < ApplicationController
 
   def index
-    @projects = Project.order(end_date: :desc)
+    @projects = if params[:search]
+      Project.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
+    else
+      Project.all.page(params[:page])
+    end
+
+    respond_to do |format|
+      format.html do
+        if request.xhr?
+          render @projects
+        else
+          render 'index'
+        end
+      end
+
+      format.js { render 'index' }
+    end
   end
 
   def show
@@ -29,8 +45,8 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
 
-    if @project.update(project_params)
-      redirect_to @project
+    if @project.update_attributes(project_params)
+      redirect_to product_path(@project)
     else
       render 'edit'
     end

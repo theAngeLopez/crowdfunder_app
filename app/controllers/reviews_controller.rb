@@ -19,7 +19,13 @@ class ReviewsController < ApplicationController
     # )
 
     if @review.save
-      redirect_to projects_path, notice: 'Review created successfully'
+      respond_to do |format|
+        format.html do
+          redirect_to project_path(@project), notice: 'Review created successfully'
+        end
+
+        format.js
+      end
     else
       render 'projects/show'
     end
