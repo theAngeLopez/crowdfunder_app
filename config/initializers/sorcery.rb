@@ -2,12 +2,9 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-<<<<<<< HEAD
-Rails.application.config.sorcery.submodules = [:remember_me]
-=======
+
 Rails.application.config.sorcery.submodules = [:remember_me, :reset_password]
 
->>>>>>> 1d2b082963266826926ddedae5ba8fb3fe7a8eab
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
