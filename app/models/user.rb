@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation
 
+  validates :password, length: { minimum: 8 }
+  validates :password, confirmation: true
+
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
   validates_presence_of :email
