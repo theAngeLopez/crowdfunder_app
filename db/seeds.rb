@@ -6,16 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-
+Project.destroy_all
 category = ["Business", "Education", "Recreation", "Charity"]
 
 
 50.times do
-  Project.create(name: Faker::Company.name,
-    description: Faker::Company.catch_phrase,
+  Project.create(name: Faker::Commerce.product_name,
+    description: Faker::Company.bs,
     funding_goal: rand(100000),
     start_date: Faker::Time.backward(14, :evening),
     end_date: Faker::Time.forward(23, :morning),
-    category: category.sample)
+    category: category.sample,
+    owner_id: rand(5))
 end
 
+5.times do
+  User.create(first_name: Test,
+    last_name: ,
+    email:
+
+
+  )

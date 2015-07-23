@@ -9,7 +9,7 @@
 
 
 <p><% @projects.each do |p| %></p>
-<p><%= p.name %></p>
+<p><%= link_to "#{p.name}", project_url(p) %></p>
 <p><%= p.description %></p>
 <p><%= p.start_date %> - <%= p.end_date %></p>
 <% end %>
