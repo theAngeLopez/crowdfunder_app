@@ -1,10 +1,11 @@
 <% if params[:search] %>
   $('#projects').html('<%= j(render @projects) %>');
 <% else %>
+  console.log(<%= j @products %>);
   $('#projects').append('<%= j(render @projects) %>');
   // $('.page-entries').html('<%= j(page_entries_info @projects) %>');
   $('.pagination').replaceWith('<%= j(paginate @projects) %>');
-    console.log("its happening");
+  console.log("its happening");
 
 
 

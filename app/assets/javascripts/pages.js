@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on("ready page:load", function(){
   $('.my_button').click(function() {
     userInput = ($(this).attr("value"));
     console.log(userInput);
@@ -11,6 +11,6 @@ $(document).ready(function(){
       } else if (userInput == "Charity") {
         alert("Charity");
       }
-  });;
+  })
 })
 

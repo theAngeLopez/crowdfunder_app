@@ -21,7 +21,7 @@ $(document).on('ready', function() {
     var bottomOfWindow = $window.scrollTop() + $window.height();
     var distanceFromBottom = $(document).height() - bottomOfWindow;
     var proposedNextPageUrl = $('.page > a[rel=next]').attr('href');
-      console.log(proposedNextPageUrl)
+      // console.log(proposedNextPageUrl)
 
     // console.log(distanceFromBottom);
 
@@ -30,31 +30,17 @@ $(document).on('ready', function() {
 
 
 
-      console.log("near the bottom!");
 
       $.ajax({
         url: nextPageUrl,
-        crossDomain: false,
+        // crossDomain: false,
         type: 'GET',
         dataType: 'script'
         // success: function(result) {
-        //   $('#projects').append(result);
-        // }
+        //    $('#projects').append(result);
+
       })
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 });
