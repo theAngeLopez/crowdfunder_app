@@ -14,22 +14,19 @@
 <%= link_to 'New Project', new_project_path %>  |
 
   <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", logout_path %>  |
+    Logged in as <%= link_to current_user.first_name, user_url(current_user) %>.
+    <%= link_to "Log out", logout_path %>
   <% else %>
     <%= link_to "Sign up", signup_path %>  |
     <%= link_to "Log in", login_path %>.
   <% end %>
 
-<%= yield %>
+  <div>
+    <p id="notice"><%= flash[:notice] %></p>
+    <p id="alert"><%= flash[:alert] %></p>
+  </div>
 
-  <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", logout_path %>
-  <% else %>
-    <%= link_to "Sign up", signup_path %> or
-    <%= link_to "log in", login_path %>.
-  <% end %>
+<%= yield %>
 
 </body>
 </html>

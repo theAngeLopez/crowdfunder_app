@@ -5,7 +5,11 @@
 
 <p>
   <strong>Description: </strong>
-  <%= @project.description %>
+  <%= (@project.description).capitalize + "." %>
+</p>
+
+<p>
+  <%= @project.owner_id %>
 </p>
 
 <p>
@@ -28,6 +32,8 @@
   <%= @project.category %>
 </p>
 
+
+<p><%= render 'reward_list' %></p>
 
 <h3>Reviews</h3>
 

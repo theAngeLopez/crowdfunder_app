@@ -4,8 +4,8 @@
 
 <p>Featured Projects</p>
 <br>
-<% @featured = Project.find(rand(74...100)) %>
+<% @featured = Project.find(rand(51...100)) %>
 <p><%= link_to @featured.name, project_url(@featured) %></p>
-<p><%= @featured.description %></p>
+<p><%= (@featured.description).capitalize + "." %></p>
 <p><%= @featured.funding_goal %></p>
 <br>
