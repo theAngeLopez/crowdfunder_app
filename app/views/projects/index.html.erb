@@ -1,10 +1,13 @@
 <h1>Browse Projects</h1>
 
+<h2><%= page_entries_info @projects %></h2>
+
 
 
 <%= form_tag projects_path, method: :get, authentication: false, id: 'search-form' do %>
   <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search" %>
+<% end %>
 
 <%= render @projects %>
 
@@ -14,3 +17,4 @@
 <p><%= p.start_date %> - <%= p.end_date %></p>
 <% end %>
 
+<%= paginate @projects, :remote => true%>
