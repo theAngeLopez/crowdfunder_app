@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# category = ["Business", "Education", "Recreation", "Charity"]
+category = ["Business", "Education", "Recreation", "Charity"]
 
 
 50.times do
@@ -16,7 +16,6 @@
     funding_goal: rand(100000),
     start_date: Faker::Time.backward(14, :evening),
     end_date: Faker::Time.forward(23, :morning),
-    # category: ["Business", "Education", "Recreation", "Charity"].rand(1))
-  )
+    category: category.sample)
 end
 
