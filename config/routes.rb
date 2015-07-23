@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root 'pages#homepage'
   get '/home' => 'pages#homepage'
 
+  get '/category' => 'pages#category'
+
+
   resources :rewards
 
   resources :users, only: [:index, :show, :new, :create, :destroy]

@@ -4,4 +4,11 @@ class PagesController < ApplicationController
   def welcome
     render :homepage
   end
+
+  def category
+    @projects = Project.all
+    render :category
+  end
+
+
 end

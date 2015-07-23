@@ -1,0 +1,52 @@
+<h1>Categories!!!!</h1>
+
+<h2>Which category of projects do you want to see?</h2>
+
+<div class='wrapper'>
+<button class="my_button" name="buttonName" value="Business">Business</button>
+<button class="my_button" name="buttonName" value="Education">Education</button>
+<button class="my_button" name="buttonName" value="Recreation">Recreation</button>
+<button class="my_button" name="buttonName" value="Charity">Charity</button>
+</div>
+
+
+<% @projects.each do |project| %>
+  <% if project.category == 'Business' %>
+    <%= render project %>
+  <% end -%>
+  <br>
+
+<% end -%>
+
+
+<% @projects.each do |project| %>
+  <% if project.category == 'Education' %>
+    <%= render project %>
+  <% end -%>
+  <br>
+
+<% end -%>
+
+<% @projects.each do |project| %>
+  <% if project.category == 'Recreation' %>
+    <%= render project %>
+  <% end -%>
+  <br>
+
+<% end -%>
+
+<% @projects.each do |project| %>
+  <% if project.category == 'Charity' %>
+    <%= render project %>
+  <% end -%>
+  <br>
+
+<% end -%>
+
+<% @projects.each do |project| %>
+  <% if project.category == 'Business' %>
+    <%= render project %>
+  <% end -%>
+  <br>
+
+<% end -%>
