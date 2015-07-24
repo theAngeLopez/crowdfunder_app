@@ -10,7 +10,7 @@ Project.destroy_all
 category = ["Business", "Education", "Recreation", "Charity"]
 
 
-50.times do
+100.times do
   Project.create(name: Faker::Commerce.product_name,
     description: Faker::Company.bs,
     funding_goal: rand(100000),
@@ -20,10 +20,5 @@ category = ["Business", "Education", "Recreation", "Charity"]
     owner_id: rand(5))
 end
 
-5.times do
-  User.create(first_name: Test,
-    last_name: ,
-    email:
 
 
-  )

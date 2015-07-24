@@ -2,10 +2,3 @@
 
 <p><%= link_to "Browse", projects_url %></p>
 
-<p>Featured Projects</p>
-<br>
-<% @featured = Project.find(rand(51...100)) %>
-<p><%= link_to @featured.name, project_url(@featured) %></p>
-<p><%= @featured.description %></p>
-<p><%= @featured.funding_goal %></p>
-<br>
