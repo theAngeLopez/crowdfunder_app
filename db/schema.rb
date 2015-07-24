@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723223953) do
+ActiveRecord::Schema.define(version: 20150724182905) do
 
   create_table "pledges", force: :cascade do |t|
     t.integer  "project_id"
-    t.integer  "user_id"
+    t.integer  "backer_id"
     t.integer  "reward_id"
     t.integer  "amount"
     t.datetime "created_at", null: false

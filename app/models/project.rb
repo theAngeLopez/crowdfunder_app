@@ -15,6 +15,6 @@ class Project < ActiveRecord::Base
   end
 
   def owner_name
-    owner.first_name + " " + owner.last_name
+    owner.full_name
   end
 end

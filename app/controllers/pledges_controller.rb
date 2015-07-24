@@ -8,6 +8,8 @@ class PledgesController < ApplicationController
 
   def create
     @pledge = Pledge.new(pledge_params)
+    @pledge.project_id = params[:project_id]
+    @pledge.backer = current_user
       if @pledge.save
         redirect_back_or_to project_url(params[:project_id]), notice: "Successfully Pledged!"
       else
