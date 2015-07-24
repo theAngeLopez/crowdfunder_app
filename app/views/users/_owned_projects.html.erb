@@ -1,0 +1,5 @@
+<h4>Owned Projects: </h4>
+
+<% @user.owned_projects.each do |owned| %>
+<p><%= owned.name %></p>
+<% end %>

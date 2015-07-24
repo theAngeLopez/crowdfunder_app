@@ -6,7 +6,12 @@
 
   <div>
     <%= f.label :amount %>
-    <%= f.text_field :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+    <div>
+    <%= f.label :backer_limit %>
+    <%= f.text_field :backer_limit %>
   </div>
 
   <%= link_to_remove_association "remove reward", f %>
