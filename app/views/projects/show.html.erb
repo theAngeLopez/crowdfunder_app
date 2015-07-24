@@ -1,36 +1,16 @@
-<p>
-  <strong>Name: </strong>
-  <%= @project.name %>
-</p>
+<p><%= @project.name %></p>
+<p>by <%= @project.owner_name %></p>
+<br>
+<p> <%= @project.pledges.count %> backers </p>
+<p><%= number_to_currency(@project.pledge_total) %> pledged of
+  <%= number_to_currency(@project.funding_goal) %> goal </p>
+<p><%= @project.start_date %></p>
+<p><%= @project.end_date %></p>
 
-<p>
-  <strong>Description: </strong>
-  <%= (@project.description).capitalize + "." %>
-</p>
+<p><%= (@project.description).capitalize %></p>
+<p>Category: <%= @project.category %></p>
 
-<!-- Project Owner info goes here -->
-
-<p>
-  <strong>Start Date: </strong>
-  <%= @project.start_date %>
-</p>
-
-<p>
-  <strong>End Date: </strong>
-  <%= @project.end_date %>
-</p>
-
-<p>
-  <strong>Funding Goal: </strong>
-  <%= @project.funding_goal %>
-</p>
-
-<p>
-  <strong>Category: </strong>
-  <%= @project.category %>
-</p>
-
-
+<br>
 <p><%= render 'reward_list' %></p>
 
 <h3>Reviews</h3>

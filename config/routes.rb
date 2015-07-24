@@ -5,15 +5,13 @@ Rails.application.routes.draw do
 
   get '/category' => 'pages#category'
 
-
   resources :rewards
   resources :user_sessions
-
   resources :users, only: [:index, :show, :new, :create, :destroy]
-  resources :pledges, only: [:show, :new, :create, :destroy]
 
   resources :projects do
     resources :reviews, only: [:show, :create, :destroy]
+    resources :pledges, only: [:show, :new, :create, :destroy]
   end
 
   get "signup" => "users#new", :as => "signup"

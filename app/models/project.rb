@@ -10,7 +10,11 @@ class Project < ActiveRecord::Base
 
   validates :name, :description, :start_date, :end_date, :funding_goal,  presence: true
 
-  # def pledge_total
-  #   pledge.sum
-  # end
+  def pledge_total
+    pledges.sum(:amount)
+  end
+
+  def owner_name
+    owner.first_name + " " + owner.last_name
+  end
 end

@@ -24,6 +24,7 @@ class ProjectsController < ApplicationController
    @project = Project.find(params[:id])
    @review = Review.new
    @rewards = @project.rewards
+   @pledge = Pledge.new
  end
 
  def new
@@ -36,6 +37,7 @@ class ProjectsController < ApplicationController
 
  def create
    @project = Project.new(project_params)
+   @project.owner = current_user.id
      if @project.save
        redirect_to projects_path, notice: "New Project Created!"
      else

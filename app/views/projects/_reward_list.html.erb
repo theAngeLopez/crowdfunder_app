@@ -1,4 +1,14 @@
+<h3>Rewards</h3>
+
 <% @rewards.each do |r| %>
-<p>Availability of reward: <%= r.name %> <%= r.amount %><%= r.description %><%= r.backer_limit %>
- </p>
+<p>Pledge <%= number_to_currency(r.amount) %></p>
+
+<p> <%= r.pledges.count %> out of <%= r.backer_limit %> left</p>
+<p> <%= r.description %> </p>
+  <%= form_for [@project, @pledge] do |f| %>
+    <%= f.hidden_field :amount, :value => r.amount %>
+    <%= f.hidden_field :reward_id, :value => r.id %>
+    <%= f.submit value="Pledge $#{r.amount}"%>
+  <% end %>
+<br>
 <% end %>
