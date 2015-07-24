@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :rewards, reject_if: :all_blank, allow_destroy: true
 
   validates :name, :description, :start_date, :end_date, :funding_goal,  presence: true
+  validates :owner, presence: true
 
   def pledge_total
     pledges.sum(:amount)
