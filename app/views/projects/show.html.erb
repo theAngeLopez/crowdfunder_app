@@ -1,5 +1,5 @@
 <p><%= @project.name %></p>
-<p>by <%= @project.owner_name %></p>
+<p>by <%= link_to @project.owner_name, user_path(@project.owner_id) %></p>
 <br>
 <p> <%= @project.pledges.count %> backers </p>
 <p><%= number_to_currency(@project.pledge_total) %> pledged of
