@@ -3,6 +3,55 @@
 <p><%= @user.email %></p>
 <p>Member since: <%= @user.created_at %></p>
 
+<h3>Comments</h3>
+
+  <p>Comments for <%= @user.full_name %></p>
+
+  <% @user.reviews.each do |review| %>
+    <p>
+      <%= review.comment %>
+      <br>
+      <% if review.user != nil %>
+        <p>by <%= review.user.full_name %></p>
+        <p>Added on: <%= review.created_at %></p>
+      <% end %>
+    </p>
+<% end -%>
+
+
+<% if current_user %>
+<h4>New Comment</h4>
+
+ <%= form_for([@user, @review]) do |f| %>
+ <%= f.hidden_field :reviewable_type, value: 'User' %>
+ <%= f.hidden_field :reviewable_id, value: @user.id %>
+
+    <% if @review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+        <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :comment %><br />
+      <%= f.text_area :comment %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Add Comment" %>
+    </div>
+  <% end %>
+
+<% else %>
+  <p>Please Log In to add a review.</p>
+<% end %>
+
+
 
 <%= render 'backed_projects' %>
 <%= render 'owned_projects' %>

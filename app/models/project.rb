@@ -1,6 +1,6 @@
 class Project < ActiveRecord::Base
 
-  has_many :reviews
+  has_many :reviews, as: :reviewable
   belongs_to :owner, class_name: 'User'
   has_many :rewards
   has_many :pledges, through: :rewards

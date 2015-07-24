@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   resources :rewards
   resources :user_sessions
-  resources :users, only: [:index, :show, :new, :create, :destroy]
+  resources :users, only: [:index, :show, :new, :create, :destroy] do
+    resources :reviews, only: [:show, :create, :destroy]
+  end
+
 
   resources :projects do
     resources :reviews, only: [:show, :create, :destroy]

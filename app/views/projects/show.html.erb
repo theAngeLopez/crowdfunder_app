@@ -32,6 +32,8 @@
 <h4>New Comment</h4>
 
  <%= form_for([@project, @review]) do |f| %>
+ <%= f.hidden_field :reviewable_type, value: 'Project' %>
+ <%= f.hidden_field :reviewable_id, value: @project.id %>
     <% if @review.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -47,6 +49,7 @@
     <div class="field">
       <%= f.label :comment %><br />
       <%= f.text_area :comment %>
+
     </div>
     <div class="actions">
       <%= f.submit "Add Comment" %>
