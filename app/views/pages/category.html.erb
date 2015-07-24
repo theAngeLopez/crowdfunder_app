@@ -9,44 +9,38 @@
 <button class="my_button" name="buttonName" value="Charity">Charity</button>
 </div>
 
-
-<% @projects.each do |project| %>
-  <% if project.category == 'Business' %>
-    <%= render project %>
+<div id="Business">
+  <% @projects.each do |project| %>
+    <% if project.category == 'Business' %>
+      <%= render project %>
+    <% end -%>
+    <br>
   <% end -%>
-  <br>
+</div>
 
-<% end -%>
-
-
-<% @projects.each do |project| %>
-  <% if project.category == 'Education' %>
-    <%= render project %>
+<div id="Education">
+  <% @projects.each do |project| %>
+    <% if project.category == 'Education' %>
+      <%= render project %>
+    <% end -%>
+    <br>
   <% end -%>
-  <br>
+</div>
 
-<% end -%>
-
-<% @projects.each do |project| %>
-  <% if project.category == 'Recreation' %>
-    <%= render project %>
+<div id="Recreation">
+  <% @projects.each do |project| %>
+    <% if project.category == 'Recreation' %>
+      <%= render project %>
+    <% end -%>
+    <br>
   <% end -%>
-  <br>
+</div>
 
-<% end -%>
-
-<% @projects.each do |project| %>
-  <% if project.category == 'Charity' %>
-    <%= render project %>
+<div id="Charity">
+  <% @projects.each do |project| %>
+    <% if project.category == 'Charity' %>
+      <%= render project %>
+    <% end -%>
+    <br>
   <% end -%>
-  <br>
-
-<% end -%>
-
-<% @projects.each do |project| %>
-  <% if project.category == 'Business' %>
-    <%= render project %>
-  <% end -%>
-  <br>
-
-<% end -%>
+</div>
