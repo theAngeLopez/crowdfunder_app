@@ -7,19 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= link_to 'Crowdfunder', home_url %>  |
-<%= link_to 'Browse All Projects', projects_path %>  |
-<%= link_to 'Projects by Category', category_url %>  |
-<%= link_to 'New Project', new_project_path %>  |
+<div class="nav">
+<span class="nav_links"><%= link_to 'Crowdfunder', home_url %></span>  |
+<span class="nav_links"><%= link_to 'Browse All Projects', projects_path %></span>  |
+<span class="nav_links"><%= link_to 'Projects by Category', category_url %></span>  |
+<span class="nav_links"><%= link_to 'New Project', new_project_path %></span>  |
 
   <% if current_user %>
     Logged in as <%= link_to current_user.first_name, user_url(current_user) %>.
-    <%= link_to "Log out", logout_path %>
+    <span class="nav_links"><%= link_to "Log out", logout_path %></span>
   <% else %>
-    <%= link_to "Sign up", signup_path %>  |
-    <%= link_to "Log in", login_path %>.
+    <span class="nav_links"><%= link_to "Log in", login_path %></span> or
+    <span class="nav_links"><%= link_to "Sign up", signup_path %></span>
   <% end %>
+</div>
 
   <div>
     <p id="notice"><%= flash[:notice] %></p>
